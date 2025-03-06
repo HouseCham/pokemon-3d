@@ -1,4 +1,5 @@
 import "./globals.css";
+import "@/styles/section.css";
 
 export default function RootLayout({
   children,
