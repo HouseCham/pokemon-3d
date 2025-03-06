@@ -4,7 +4,7 @@ import Section from "@/components/Section";
 export default function Home() {
   return (
     <div>
-      <div className="container">
+      <div id="container">
         <Section />
         <Section />
         <Section />

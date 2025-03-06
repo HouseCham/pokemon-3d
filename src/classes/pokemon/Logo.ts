@@ -1,16 +1,27 @@
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import Scene from "@/classes/Scene";
-import { Group } from "three";
-
-export default class Logo {
-    private object: Group = new Group();
+import BaseObject from "@/classes/pokemon/BaseObject";
+/**
+ * Class representing a Logo
+ * @extends BaseObject
+ * @public
+ */
+export default class Logo extends BaseObject {
     constructor(scene: Scene, loader: GLTFLoader) {
-        loader.load(
-            "/3d/logo.glb",
-            (gltf) => {
-                this.object = gltf.scene;
-                scene.add(this.object);
-            },
-        )
+        super("/3d/logo.glb", scene, loader);
     }
+    /**
+     * Set the position of the Logo object
+     */
+    protected setPosition() {
+        this.object.translateZ(-10);
+        if (window.innerWidth > 900) {
+            // not a clue how this formula was found, but it works
+            const ratio = (window.innerWidth - 900) * 3.2 / 460 + 5.6;
+            this.object.translateY(4);
+            this.object.translateX(ratio);
+        } else {
+            this.object.translateY(7);
+        }
+    };
 }

@@ -7,6 +7,7 @@ import Skybox from '@/classes/Skybox';
 import Lights from '@/classes/Lights';
 import Loader from './Loader';
 import Logo from './pokemon/Logo';
+import Pokeball from './pokemon/Pokeball';
 
 export default class Scene extends ThreeScene {
     private camera: Camera;
@@ -24,6 +25,7 @@ export default class Scene extends ThreeScene {
         new Lights(this);
         // create logo
         new Logo(this, loader);
+        new Pokeball(this, loader);
 
         this.animate(renderer);
     }
