@@ -4,7 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
  * Abstract class representing a base 3D object
  * @abstract
  */
-export default abstract class BaseObject {
+export abstract class BaseObject {
     protected object: Group = new Group();
     constructor(modelSrc: string, scene: Scene, loader: GLTFLoader) {
         loader.load(

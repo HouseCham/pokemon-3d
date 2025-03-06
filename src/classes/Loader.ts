@@ -1,6 +1,6 @@
 import { DRACOLoader, GLTFLoader } from "three/examples/jsm/Addons.js";
 
-export default class Loader extends GLTFLoader {
+export class Loader extends GLTFLoader {
     constructor() {
         super();
         const dracoLoader = new DRACOLoader();

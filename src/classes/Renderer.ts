@@ -1,7 +1,7 @@
 import { WebGLRenderer } from "three";
-import Scene from "@/classes/Scene";
+import { Scene } from "@/classes";
 
-export default class Renderer extends WebGLRenderer {
+export class Renderer extends WebGLRenderer {
     constructor(canvasId: string) {
         super({
             antialias: true,

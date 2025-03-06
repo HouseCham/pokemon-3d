@@ -1,12 +1,12 @@
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
-import Scene from "@/classes/Scene";
-import BaseObject from "@/classes/pokemon/BaseObject";
+import { Scene } from "@/classes";
+import { BaseObject } from "./BaseObject";
 /**
  * Class representing a Logo
  * @extends BaseObject
  * @public
  */
-export default class Logo extends BaseObject {
+export class Logo extends BaseObject {
     constructor(scene: Scene, loader: GLTFLoader) {
         super("/3d/logo.glb", scene, loader);
     }

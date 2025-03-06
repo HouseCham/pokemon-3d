@@ -7,7 +7,7 @@ import {
     Scene,
  } from 'three';
 
-export default class Skybox {
+export class Skybox {
     constructor(texturePath: string, scene: Scene) {
         const skyGeometry = new SphereGeometry(360, 25, 25);
         const loader = new TextureLoader();

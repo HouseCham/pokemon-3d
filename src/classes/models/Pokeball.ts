@@ -1,12 +1,12 @@
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
-import Scene from "@/classes/Scene";
-import BaseObject from "@/classes/pokemon/BaseObject";
+import { Scene } from "@/classes";
+import { BaseObject } from "./BaseObject";
 /**
  * Class representing a Pokeball
  * @extends BaseObject
  * @public
  */
-export default class Pokeball extends BaseObject {
+export class Pokeball extends BaseObject {
     constructor(scene: Scene, loader: GLTFLoader) {
         super("/3d/pokeball.glb", scene, loader);
     }

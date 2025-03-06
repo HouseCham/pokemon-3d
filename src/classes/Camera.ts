@@ -1,6 +1,6 @@
 import { PerspectiveCamera } from "three";
 
-export default class Camera extends PerspectiveCamera {
+export class Camera extends PerspectiveCamera {
     private container: HTMLElement;
     constructor() {
         super(75, window.innerWidth / window.innerHeight, 0.1, 1000);

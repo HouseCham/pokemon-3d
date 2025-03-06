@@ -1,17 +1,12 @@
-import { 
+import {
     Scene as ThreeScene
- } from 'three';
-import Renderer from '@/classes/Renderer';
-import Camera from '@/classes/Camera';
-import Skybox from '@/classes/Skybox';
-import Lights from '@/classes/Lights';
-import Loader from './Loader';
-import Logo from './pokemon/Logo';
-import Pokeball from './pokemon/Pokeball';
+} from 'three';
+import { Renderer, Camera, Skybox, Lights, Loader } from '@/classes';
+import { Logo, Pokeball } from '@/classes/models';
 
-export default class Scene extends ThreeScene {
+export class Scene extends ThreeScene {
     private camera: Camera;
-    
+
     constructor(renderer: Renderer) {
         super();
 
