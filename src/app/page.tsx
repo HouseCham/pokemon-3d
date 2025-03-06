@@ -1,8 +1,7 @@
-import dynamic from "next/dynamic";
-const HomeComponent = dynamic(() => import("@/internal/infrastructure/ui/Home/HomeComponent"));
+import Background from "@/components/Background";
 
 export default function Home() {
   return (
-    <HomeComponent />
+    <Background />
   );
 }
