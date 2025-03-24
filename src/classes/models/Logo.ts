@@ -7,6 +7,7 @@ import { BaseObject } from "./BaseObject";
  * @public
  */
 export class Logo extends BaseObject {
+
     constructor(scene: Scene, loader: GLTFLoader) {
         super("/3d/logo.glb", scene, loader);
     }
@@ -24,4 +25,12 @@ export class Logo extends BaseObject {
             this.object.translateY(7);
         }
     };
+
+    protected animate() {
+        this.counter += 0.01;
+        if (this.object) {
+            this.object.rotation.y = Math.sin(this.counter) * 0.3;
+        }
+        requestAnimationFrame(this.animate.bind(this));
+    }
 }

@@ -23,4 +23,14 @@ export class Pokemon extends BaseObject {
     protected setPosition() {
         this.positionStrategy(this.object);
     };
+    /**
+     * Animate the pokemon object
+     */
+    protected animate() {
+        requestAnimationFrame(this.animate.bind(this));
+        this.counter += 0.01;
+        if (this.object) {
+            this.object.rotation.y = Math.sin(this.counter) / 7 + 1.2
+        }
+    }
 }

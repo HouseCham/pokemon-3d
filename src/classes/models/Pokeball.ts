@@ -1,6 +1,7 @@
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { Scene } from "@/classes";
 import { BaseObject } from "./BaseObject";
+import { Clock, AnimationMixer } from "three";
 /**
  * Class representing a Pokeball
  * @extends BaseObject
@@ -8,7 +9,7 @@ import { BaseObject } from "./BaseObject";
  */
 export class Pokeball extends BaseObject {
     constructor(scene: Scene, loader: GLTFLoader) {
-        super("/3d/pokeball.glb", scene, loader);
+        super("/3d/pokeball.glb", scene, loader, true);
     }
     /**
      * Set the position of the Pokeball object
@@ -28,5 +29,17 @@ export class Pokeball extends BaseObject {
         }
         this.object.scale.set(2, 2, 2);
         this.object.rotateZ(Math.PI / 20);
+    }
+
+    /**
+     * Animate the pokemon object
+     */
+    protected animate() {
+        requestAnimationFrame(this.animate.bind(this));
+
+        const delta = this.clock.getDelta();
+        if (this.animation) {
+            this.animation.update(delta);
+        }
     }
 }
