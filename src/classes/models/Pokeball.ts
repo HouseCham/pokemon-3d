@@ -1,7 +1,6 @@
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { Scene } from "@/classes";
 import { BaseObject } from "./BaseObject";
-import { Clock, AnimationMixer } from "three";
 /**
  * Class representing a Pokeball
  * @extends BaseObject
